@@ -74,7 +74,11 @@ car4.addImage(car4Image)
         cars[index-1].y = y;
 
         if (index === player.index){
-          cars[index - 1].shapeColor = "red";
+          //cars[index - 1].shapeColor = "red";
+          fill("yellow");
+          strokeWeight(3);
+          stroke("orange");
+          circle(x,y,60);
           camera.position.x = displayWidth/2;
           camera.position.y = cars[index-1].y
         }

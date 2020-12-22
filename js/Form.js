@@ -5,6 +5,7 @@ class Form {
     this.button = createButton('Play');
     this.greeting = createElement('h2');
     this.title = createElement('h2');
+    this.reset=createButton('Restart Game');
   }
   hide(){
     this.greeting.hide();
@@ -31,6 +32,20 @@ class Form {
       this.greeting.html("Hello " + player.name)
       this.greeting.position(displayWidth/2 - 70, displayHeight/4);
     });
+this.reset.position(600,50);
+this.reset.mousePressed(()=>{
+player.updateCount(0);
+game.update(0);
+location.reload();
+
+
+
+
+}) ;
+
+
+
+
 
   }
 }
