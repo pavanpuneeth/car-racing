@@ -48,7 +48,8 @@ car4.addImage(car4Image)
     form.hide();
 
     Player.getPlayerInfo();
-    
+    player.getCarsAtEnd();
+  
     if(allPlayers !== undefined){
       //var display_position = 100;
       background("#c68767")
@@ -89,11 +90,24 @@ car4.addImage(car4Image)
 
     }
 
-    if(keyIsDown(UP_ARROW) && player.index !== null){
+    if(keyIsDown(UP_ARROW) && player.index !== null && player.distance <= 3650){
       player.distance +=10
       player.update();
     }
 
+    if(player.distance === 3650){
+  gameState=2;
+  player.rank+=1;
+  Player.updateCarsAtEnd(player.rank);
+}
+
     drawSprites();
   }
+end(){
+textSize(50);
+text("gameEnd",displayWidth/2,displayHeight/2)
+text("you are = "+ player.rank,displayWidth/2,displayHeight/2+100)
+
+}
+
 }

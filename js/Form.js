@@ -36,6 +36,7 @@ this.reset.position(600,50);
 this.reset.mousePressed(()=>{
 player.updateCount(0);
 game.update(0);
+player.updateCarsAtEnd(0);
 location.reload();
 
 
