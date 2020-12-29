@@ -1,5 +1,5 @@
 var canvas, backgroundImage;
-
+var carsAtEnd;
 var gameState = 0;
 var playerCount;
 var allPlayers;
@@ -40,5 +40,8 @@ function draw(){
   if(gameState === 1){
     clear();
     game.play();
+  }
+  if(gameState===2){
+    game.end();
   }
 }
